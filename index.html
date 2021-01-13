@@ -9,6 +9,12 @@
       content="We specialise in building cutting-edge mobile applications and captivating websites. Our work is based on the philosophy that pleasing our customers really means pleasing their end-users."
     />
     <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
       rel="apple-touch-icon"
       sizes="57x57"
       href="favicons/apple-icon-57x57.png"
@@ -93,27 +99,65 @@
   </head>
 
   <body>
-    <img id="logo" src="logo.svg" alt="logo" />
-    <div id="container">
-      <p id="slogen">
-        WE MAKE IT H<span style="font-weight: 700">APP</span>EN.
-      </p>
-      <a id="contact" href="mailto:hello@flystraight.media"
-        ><i class="fa fa-envelope"></i>
-        <span style="font-weight: 500">hello</span>@flystraight.media</a
-      >
+    <div class="container-fluid h-100">
+      <img id="logo" src="logo.svg" alt="logo" />
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="col">
+          <div class="row justify-content-center d-none d-sm-block slogan">
+            <p>WE MAKE IT H<span style="font-weight: 700">APP</span>EN.</p>
+          </div>
+          <div class="row justify-content-center d-sm-none slogan">
+            <p>
+              WE MAKE IT <br />
+              H<span style="font-weight: 700">APP</span>EN.
+            </p>
+          </div>
+          <div class="row justify-content-center">
+            <a id="contact" href="mailto:hello@flystraight.media"
+              ><i class="fa fa-envelope"></i>
+              <span style="font-weight: 500">hello</span>@flystraight.media</a
+            >
+          </div>
+          <div class="fixed-bottom">
+            <div class="row justify-content-center" id="clients-header">
+              Our clients include...
+            </div>
+            <div
+              class="row justify-content-center align-items-center"
+              id="clients"
+            >
+              <div class="col-auto">
+                <img
+                  class="center-block"
+                  src="t-systems.png"
+                  alt="t-systems"
+                  id="t-systems"
+                />
+              </div>
+              <div class="col-auto">
+                <img src="safa.png" alt="safa" id="safa" />
+              </div>
+              <div class="col-auto">
+                <img src="csakdiak.png" alt="csakdiak" id="csakdiak" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
 
 <style>
+  html {
+    height: 100%;
+  }
   body {
-    height: 100vh;
+    height: 100%;
     background-image: url("background.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    overflow: hidden;
   }
   #logo {
     position: absolute;
@@ -121,19 +165,13 @@
     margin-top: 40px;
     max-width: 140px;
   }
-  #container {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-  #slogen {
+  .slogan {
     color: #eeeeee;
     font-size: 2.85rem;
     font-weight: 300;
     font-family: "Montserrat", sans-serif;
     text-align: center;
+    padding: 0 30px;
   }
   #contact {
     color: #eeeeee;
@@ -142,17 +180,59 @@
     font-family: "Montserrat", sans-serif;
     text-decoration: none;
   }
+  #clients-header {
+    color: #eeeeee;
+    font-size: 1rem;
+    font-weight: 300;
+    font-family: "Montserrat", sans-serif;
+    background-color: hsla(0, 0%, 0%, 0.5);
+    padding-top: 16px;
+  }
+  #clients {
+    background-color: hsla(0, 0%, 0%, 0.5);
+    padding-top: 10px;
+    padding-bottom: 40px;
+  }
+  #clients img {
+    margin: auto;
+    display: block;
+  }
+  #t-systems {
+    width: 120px;
+  }
+  #safa {
+    width: 70px;
+  }
+  #csakdiak {
+    width: 130px;
+  }
 
   @media only screen and (max-width: 420px) {
     #logo {
       margin-left: 30px;
       max-width: 120px;
     }
-    #slogen {
-      font-size: 2.5rem;
+    .slogan {
+      font-size: 2rem;
     }
     #contact {
       font-size: 1rem;
+    }
+    #clients-header {
+      font-size: 0.7rem;
+      padding-top: 10px;
+    }
+    #clients {
+      padding-bottom: 15px;
+    }
+    #t-systems {
+      width: 90px;
+    }
+    #safa {
+      width: 52px;
+    }
+    #csakdiak {
+      width: 96px;
     }
   }
 
@@ -161,11 +241,27 @@
       margin-left: 16px;
       max-width: 100px;
     }
-    #slogen {
-      font-size: 2rem;
+    .slogan {
+      font-size: 1.8rem;
     }
     #contact {
       font-size: 0.85rem;
+    }
+    #clients-header {
+      font-size: 0.7rem;
+      padding-top: 10px;
+    }
+    #clients {
+      padding-bottom: 15px;
+    }
+    #t-systems {
+      width: 72px;
+    }
+    #safa {
+      width: 42px;
+    }
+    #csakdiak {
+      width: 78px;
     }
   }
 </style>
