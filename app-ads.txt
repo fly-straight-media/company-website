@@ -1,3 +1,5 @@
+google.com, pub-6485293508231242, DIRECT, f08c47fec0942fa0
+
 #Last updated February 17th 2021
 #Appodeal
 appodeal.com, 119355, DIRECT
