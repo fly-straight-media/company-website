@@ -1,4 +1,4 @@
-google.com, pub-6485293508231242, DIRECT, f08c47fec0942fa0
+google.com, pub-4961112208674325, DIRECT, f08c47fec0942fa0
 
 #Last updated February 17th 2021
 #Appodeal
