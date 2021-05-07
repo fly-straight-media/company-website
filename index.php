@@ -228,9 +228,8 @@
 </html>
 
 <style>
-  @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap");
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap');
-
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,600&display=swap');
+  
   :root {
     --primary-color: rgb(255, 69, 82);
     --primary-text-color: rgb(32, 32, 32);
@@ -242,6 +241,7 @@
     font-family: "Source Sans Pro", sans-serif;
     color: var(--primary-text-color);
     background-color: rgb(251, 251, 251);
+    -webkit-font-smoothing: antialiased;
   }
 
   section {
@@ -270,7 +270,7 @@
   h3 {
     color: var(--primary-color);
     font-size: 2rem;
-    font-weight: 500;
+    font-weight: 400;
     text-align: center;
     margin-top: 0;
     margin-bottom: 30px;
@@ -314,7 +314,7 @@
     display: inline-block;
     color: var(--primary-text-color);
     font-size: 1.9rem;
-    font-weight: 600;
+    font-weight: 700;
     padding: 0 16px;
     transition: transform 0.23s ease-out;
     margin-bottom: 4px;
@@ -360,7 +360,7 @@
   }
 
   #red-block-text>p {
-    font-weight: bold;
+    font-weight: 700;
     font-size: 7rem;
     line-height: 6.2rem;
     color: white;
@@ -375,7 +375,7 @@
   }
 
   #slogan {
-    font-weight: bold;
+    font-weight: 700;
     font-size: 3rem;
     margin-top: 40px;
     margin-bottom: 0;
@@ -405,12 +405,13 @@
     font-family: "Roboto", sans-serif;
     font-size: 2.7rem;
     margin-bottom: 0;
-    font-weight: 500;
+    font-weight: 700;
   }
 
   .service-subtitle {
     font-family: "Roboto", sans-serif;
     font-size: 1.8rem;
+    font-weight: 400;
     color: var(--primary-color);
   }
 
@@ -427,7 +428,7 @@
     font-size: 1.8rem;
     display: block;
     margin-top: 10px;
-    font-weight: 500;
+    font-weight: 700;
   }
 
   .service-cta i {
@@ -453,11 +454,17 @@
   #clients-title {
     color: var(--primary-color);
     text-align: center;
-    font-size: 2.1rem;
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
+    font-size: 2.2rem;
+    font-weight: 600;
     font-style: italic;
     margin-bottom: 25px;
+  }
+
+  #clients div[class^="col"] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   #t-systems-logo {
@@ -498,12 +505,12 @@
   }
 
   #email-address i {
-    padding-right: 10px;
+    padding-right: 8px;
   }
 
   label {
     font-family: "Roboto", sans-serif;
-    font-weight: 500;
+    font-weight: 700;
     font-size: 1.55rem;
   }
 
@@ -513,7 +520,7 @@
     border: 1px solid #e9e9e9;
     border-radius: 8px;
     font-size: 1.7rem;
-    font-weight: 500;
+    font-weight: 600;
     padding: 6px 12px;
   }
 
@@ -532,7 +539,7 @@
     display: inline;
     font-family: inherit;
     font-size: 1.6rem;
-    font-weight: 600;
+    font-weight: 700;
   }
 
   #form-submit-button {
@@ -544,6 +551,7 @@
     border-radius: 80px;
     color: white;
     margin-top: 40px;
+    font-weight: 600;
   }
 
   #form-submit-button:hover {
@@ -586,6 +594,7 @@
   footer a {
     font-size: 1.35rem;
     margin-top: 7px;
+    font-weight: 600;
   }
 
   @media screen and (min-width: 768px) {
@@ -779,15 +788,15 @@
 
     .service-title {
       margin-top: 10px;
-      font-size: 2rem;
+      font-size: 2.1rem;
     }
 
     .service-subtitle {
-      font-size: 1.6rem;
+      font-size: 1.7rem;
     }
 
     .service-cta {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
     }
 
     #privacy-label {
