@@ -121,7 +121,7 @@
       </div>
     </section>
     <section id="clients">
-      <div id="clients-title">Ügyfeleink....</div>
+      <div id="clients-title">Akikkel már csapatunk dolgozott....</div>
       <div class="row justify-content-center">
         <div class="col-6 col-md-3 text-center">
           <img src="csakdiak-logo.png" alt="CSAKDIÁK" id="csakdiak-logo" />
