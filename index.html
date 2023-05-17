@@ -1157,16 +1157,17 @@
     const form = $("#form");
     const inputs = form.find("input, select, button, textarea");
 
-    // Let's disable the inputs for the duration of the Ajax request.
-    // Note: we disable elements AFTER the form data has been serialized.
-    // Disabled form elements will not be serialized.
-    inputs.prop("disabled", true);
-
     const formData = new FormData(form[0]);
     request = $.post({
       url: "https://www.flystraight.media/api/sendMail",
       data: Object.fromEntries(formData.entries()),
+      dataType: "json",
     });
+
+    // Let's disable the inputs for the duration of the Ajax request.
+    // Note: we disable elements AFTER the form data has been serialized.
+    // Disabled form elements will not be serialized.
+    inputs.prop("disabled", true);
 
     request.done(function (response) {
       $("#form-submit-result").html("Köszönjük! Mihamarabb keresni fogunk.");
