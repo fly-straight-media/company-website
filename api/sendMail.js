@@ -6,13 +6,13 @@ export default function handler(request, response) {
   const msg = {
     to: "hello@flystraight.media",
     from: "hello@flystraight.media",
-    subject: `Contact Form - ${request.body.name}`,
-    text: `${request.body.email}\n${request.body.message}`,
+    subject: `FLY STRAIGHT MEDIA Contact Form`,
+    text: `${request.body.name}\n${request.body.email}\n\n${request.body.message}`,
   };
 
   sgMail
     .send(msg)
-    .then((response) => {
+    .then(() => {
       response.status(204).send();
     })
     .catch((error) => {
