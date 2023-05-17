@@ -1164,7 +1164,7 @@
 
     const formData = new FormData(form[0]);
     request = $.post({
-      url: "/api/sendMail",
+      url: "https://flystraight.media/api/sendMail",
       data: Object.fromEntries(formData.entries()),
     });
 
