@@ -278,7 +278,7 @@
             ><i class="fas fa-envelope"></i>hello@flystraight.media</a
           >
         </div>
-        <form id="form" method="POST">
+        <form id="form">
           <div class="row justify-content-center">
             <div class="col-md-6 col-lg-3">
               <div class="form-group">
@@ -1146,51 +1146,55 @@
 
   /* Form submission */
 
-  var request;
+  const form = $("#form");
+  form.on("submit", submitForm);
 
-  function submitForm() {
-    // Abort any pending request
-    if (request) {
-      request.abort();
-    }
+  function submitForm(e) {
+    e.preventDefault();
 
-    const form = $("#form");
+    const data = new FormData(event.target);
+
     const inputs = form.find("input, select, button, textarea");
 
-    const formData = new FormData(form[0]);
-    request = $.post({
-      url: "https://www.flystraight.media/api/sendMail",
-      data: Object.fromEntries(formData.entries()),
-      dataType: "json",
-    });
-
-    // Let's disable the inputs for the duration of the Ajax request.
-    // Note: we disable elements AFTER the form data has been serialized.
-    // Disabled form elements will not be serialized.
     inputs.prop("disabled", true);
 
-    request.done(function (response) {
-      $("#form-submit-result").html("Köszönjük! Mihamarabb keresni fogunk.");
-    });
-
-    request.fail(function (_, textStatus, errorThrown) {
-      $("#form-submit-result").html(
-        "Hiba történt. Kérjük keress minket az e-mail címünkön közvetlenül."
-      );
-    });
-
-    // Callback handler that will be called regardless
-    // if the request failed or succeeded
-    request.always(function () {
-      // Reenable the inputs
-      inputs.prop("disabled", false);
-    });
+    fetch("https://formspree.io/f/xeqvezvr", {
+      method: "POST",
+      body: data,
+      headers: {
+        Accept: "application/json",
+      },
+    })
+      .then((response) => {
+        if (response.ok) {
+          $("#form-submit-result").html(
+            "Köszönjük! Mihamarabb keresni fogunk."
+          );
+          form[0].reset();
+        } else {
+          response.json().then((data) => {
+            if (Object.hasOwn(data, "errors")) {
+              status.innerHTML = data["errors"]
+                .map((error) => error["message"])
+                .join(", ");
+            } else {
+              $("#form-submit-result").html(
+                "Hiba történt. Kérjük keress minket az e-mail címünkön közvetlenül."
+              );
+            }
+          });
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+        $("#form-submit-result").html(
+          "Hiba történt. Kérjük keress minket az e-mail címünkön közvetlenül."
+        );
+      })
+      .finally(() => {
+        inputs.prop("disabled", false);
+      });
   }
-
-  $("#form").submit(function (event) {
-    event.preventDefault();
-    submitForm(event);
-  });
 
   // Smooth scroll.
   $(document).ready(function () {
